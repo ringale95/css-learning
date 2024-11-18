@@ -1,0 +1,29 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="transform/transfrom property" />
+
+# Transform Property
+
+Transform property in css lets you
+- rotate 
+- scale
+- skew
+- translate
+
+an element. It modifies [coordinate space](?path=/docs/cordinate-cordinate-space--docs) of CSS. These are implementation are written in browser rendering engines like Blink, Gecko, Webkit
+
+Only transformable elements are transformed. Below are not transformed:
+- Inline boxes ( multiple span within p)
+- Table
+
+API:
+
+```
+transform: none | transform-functions;
+```
+
+ <div class="box_t rotate">Rotate</div>
+  <div class="box_t scale">Scale</div>
+  <div class="box_t translate">Translate</div>
+  <div class="box_t skew">Skew</div>
+  <div class="box_t combined">Combined</div>

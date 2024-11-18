@@ -1,0 +1,63 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Learn CSS" />
+
+# Learn CSS
+
+CSS stands for "Cascading Stylesheets". Some styles are applied by browser called as "user-agent" styles. These styles are applied by default and can be overridden by the styles we write. CSS is used to style the HTML elements and make the web pages look good.
+
+### CSS Generic Syntax
+
+CSS Rule:
+
+```css
+selector {
+  property: value;
+}
+```
+
+Add css file in html:
+```html
+<link rel="stylesheet" href="styles.css">
+```
+HTML Selectors:
+h1, p, li ..etc
+
+Selecting two HTML selectors at a time
+```css
+h1, p {
+  color:green;
+}
+```
+Remove list bullets from html elements
+```css
+li{
+  list-style-type: none;
+}
+```
+
+### CSS Specificity Scoring
+
+- **ID selector:** 100  
+- **Class selector:** 10  
+- **Element selector:** 1  
+
+CSS rules are applied based on specificity and follow this hierarchy of precedence:  
+
+```
+Inline styles > ID selectors > Class + Element selectors > Class selectors > Element selectors
+```
+
+`If multiple rules have the same specificity, the rule that appears later in the stylesheet (cascading order) will be applied.`
+
+
+We can combine more than one specificty like class + element or class + id and so on. Calculate specificity based on the total of all!Refrain from using `style` tag.
+
+
+
+
+
+
+
+
+

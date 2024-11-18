@@ -1,0 +1,127 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="box model/css box model" />
+
+# Box Model
+
+In CSS, everything has a box around it. Every box has `inner` display type and `outer` display type.
+
+Two types of boxes:
+- Block
+- Inline
+
+## Outer Display Type as Block
+- box break into new line
+- width and height are respected
+- padding, border, margin will cause other boxes to be pushed away
+- if width not specified the box will take container 100% size and fill up all space available
+
+Ex: h1, p 
+
+## Outer Display Type as Inline
+- box will not break into new line
+- width and height will not be applied
+- `Top and Bottom` padding, border, margin will not cause other boxes to be pushed away
+- `Left and Right` padding, border, margin will apply but will cause other boxes to be pushed away
+
+Ex: span, a, em, strong
+
+  
+  ### Block element example
+  <div class="block-box">I am a block box.</div>
+
+  CSS for block element:
+```css
+.block-box{
+    display: block;
+    width: 20%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid blue;
+    background-color: lightblue;
+}
+```
+  
+  ### Inline element example
+  <p>
+    This is an inline <span class="inline-box">box</span> inside a paragraph.
+    Notice how it does not break the line and adjusts to content size.
+</p>
+
+CSS for inline element
+```css
+.inline-box{
+    display: inline;
+    width: 50rem;
+    padding: 10px;
+    border: 2px solid red;
+    margin: 5px;
+    background-color: lightcoral;
+}
+```
+
+### Inner Display type: 
+-----
+The inner display type determines how the child elements of a box are laid out within it. While the outer display type defines how the box itself behaves in the overall layout (e.g., block or inline), the inner display type focuses on organizing the box's direct children
+
+You can set the inner display type of a block element to flex or grid without affecting its outer display type. The box will still behave like a block-level element in the normal flow of the document, but its children will now be laid out as flex items or grid items.
+```
+display: flex or grid
+```
+
+More about different CSS layout like [flex](?path=/docs/flexbox-layout-flex--docs) and [grid](?path=/docs/grid-layout-grid--docs).
+
+## CSS box model
+
+<div class="box-model">
+    <div class="content">Content</div>
+</div>
+
+CSS used:
+```css
+.box-model {
+  margin: 40px auto; /* Outer margin */
+  width: 300px;
+  border: 10px solid #4CAF50; /* Border */
+  padding: 20px; /* Inner padding */
+  background-color: #e3fcef; /* Padding background */
+  box-sizing: content-box; /* Ensure only content width is counted */
+}
+
+.content {
+  background-color: #2196F3; /* Content background */
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+```
+Explanation:
+- Margin: Creates space outside the box to separate it from other elements.
+- Border: Surrounds the padding and content, giving the box its boundary.
+- Padding: Creates space between the content and the border.
+- Content: The actual content inside the box.
+
+##### Note: The margin is not counted towards the actual size of the box — sure, it affects the total space that the box will take up on the page, but only the space outside the box. The box's area stops at the border — it does not extend into the margin 
+
+### Alternative css box model
+
+No need to add up any padding + border around content to get real size of box. 
+Actual space taken up by the box will be just the width and height and dont add any padding around it.
+
+Set property box-sizing to get actual size of element:
+```
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+```
+### Margins:
+The margin is an invisible space around your box.It pushes other elements away from the box. Margins can have positive or negative values. 
+`Setting a negative margin on one side of your box can cause it to overlap other things on the page`.

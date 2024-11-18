@@ -1,0 +1,94 @@
+
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Native CSS/calc()" />
+
+### calc() function
+
+### API
+
+```
+Output value = calc(expression)
+```
+
+The calc() function takes a single expression as its parameter, and the expression's result is used as the value for a CSS property
+The implementation of calc function is written in `browser rendering engines` like Blink(chrome), Gecko(firefox), Webkit(safari)
+
+```css
+.container{
+  max-width: 1312px; /* Restrict maximum size */
+  width: calc(100% - 50px) /* Shrink dynamically */
+  margin: 0 auto;  /* Center the container */
+}
+```
+- For wide screens (greater than 1312px), the container is capped at 1312px.
+- For narrow screens (less than 1312px), the width adjusts dynamically, leaving 50px total space.
+
+Rules:
+- Put space between + or - operators and the values
+- Invalid syntax: calc(0 + 20px)
+
+
+## Exercise: Responsive Card with Dynamic Dimensions Using calc()
+
+### Objective
+Create a responsive card layout where the card width, height, font size, and padding dynamically adjust using the calc() function.
+
+```html
+<div class="container">
+    <div class="card">
+        <h2 class="card-title">Card Title</h2>
+        <p class="card-description">This is a description of the card. Learn how to adjust dimensions dynamically using calc().</p>
+        <button class="card-button">Learn More</button>
+    </div>
+</div>
+```
+
+Write CSS Rules:
+
+The container should have the card class with the following:
+- A width of 60% of the container minus 20px.
+- A height of 40% of the viewport height plus 100px.
+- Padding calculated as 5% of the width plus 10px.
+- Font size that is 2% of the viewport width minus 1rem.
+- A button width that is 30% of the card width plus 10px.
+
+
+### Solution
+<div className="container">
+    <div className="card">
+        <h2 className="card-title">Card Title</h2>
+        <p className="card-description">This is a description of the card. Learn how to adjust dimensions dynamically using calc().</p>
+        <button className="card-button">Learn More</button>
+    </div>
+</div>
+
+Above card's CSS Solution:
+```css
+.container{
+    display:flex;
+}
+.card{
+    width: calc(60% - 20px);
+    height: calc(40vh - 100px);
+    padding: calc(5% + 10px);
+    font-size: calc(2vw - 1rem);  
+    background-color: #f5f5f5;
+}
+.card-button{
+    width: calc(30% + 10px);
+    border: 2px;
+}
+```
+
+
+### UseCase:
+Below are usecases where we should use calc() function:
+- Combine units(%, px, em)
+- Dynamic layout adjustments
+- Centering elements when using absolute or fixed 
+- Responsive font sizes 
+- Full height layouts. When creating layouts that need to fill the viewport minus fixed headers or footers
+- Conditional column or grid gaps
+- To ensure element doesn't overflow parent container by subtracting padding or margins 
+- Maintain aspect ratio by calculating height based on width

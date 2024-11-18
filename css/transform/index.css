@@ -1,0 +1,13 @@
+.box_t{
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+      background-color: #4caf50;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+}
