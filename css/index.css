@@ -1,6 +1,7 @@
 @import 'calc/index.css';
 @import 'transform/index.css';
 @import 'css-box/index.css';
+@import 'cordinate-space/index.css';
 
 .box {
     width: 50px;
@@ -8,18 +9,3 @@
     background-color: royalblue;
 }
 
-.rotate:hover{
-    transform: rotate(45deg);
-}
-
-.scale:hover{
-    transform: scale(1.5);
-}
-
-.translate:hover{
-    transform: translateX(50px);
-}
-
-.skew:hover{
-    transform: skew(20deg, 10deg);
-}

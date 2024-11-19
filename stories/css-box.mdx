@@ -4,7 +4,7 @@ import { Meta } from "@storybook/blocks";
 
 # Box Model
 
-In CSS, everything has a box around it. Every box has `inner` display type and `outer` display type.
+In CSS, everything has a box around it. Every box has `inner` display type and `outer` display type which helps define how these boxes behave and interact in relation to other boxes
 
 Two types of boxes:
 - Block
@@ -125,3 +125,131 @@ html {
 ### Margins:
 The margin is an invisible space around your box.It pushes other elements away from the box. Margins can have positive or negative values. 
 `Setting a negative margin on one side of your box can cause it to overlap other things on the page`.
+
+### Rules:
+- Two positive margin will combine to become one margin. Its size will be equal to largest individual margin.
+- Two negative margins will collapse and smallest value will be used.
+- If one margin is negative its value is subtracted from total
+
+<div class="pc_container">
+  <p class="one_pc">I am paragraph one.</p>
+  <p class="two_pc">I am paragraph two.</p>
+</div>
+
+```css
+.one_pc {
+  margin-bottom: 50px;
+}
+
+.two_pc {
+  margin-top: 30px;
+}
+```
+
+`Here the total margin between para 1 and para 2 will not be 80 but 50(largest of them)`
+
+## Borders
+<div class="bc_container">
+  <div class="bc_box">Change my borders.</div>
+</div>
+
+CSS used
+```css
+.bc_container {
+  margin: 40px;
+  padding: 20px;
+  border-top: 5px dotted green;
+  border-right: 1px solid black;
+  border-bottom: 20px double rgb(23 45 145);
+}
+
+.bc_container .bc_box {
+  padding: 20px;
+  background-color: lightgray;
+  border: 1px solid #333333;
+  border-top-style: dotted;
+  border-right-width: 20px;
+  border-bottom-color: hotpink;
+}
+```
+
+We can define style, define width, color of border using above properties.
+- border-top-style
+- border-right-width
+- border-bottom-color
+- border: 1px solid red 
+
+## Padding
+
+Padding can never be negative unlike margins
+
+## Inline boxes
+
+All above properties applies to block boxes but for inline boxes like span 
+the `width, height are ignored` and `top/bottom margins and paddings are respected 
+but does not change relationship with other elements`. Althought it overlaps other words.
+
+<p class="inline_p">
+  I am a paragraph and this is a <span class="inline_span">span</span> inside that paragraph. A span
+  is an inline element and so does not respect width and height.
+</p>
+CSS used:
+```css
+.inline_p {
+  border: 2px solid rebeccapurple;
+  width: 200px;
+}
+
+/* here span has margin, padding, width, height
+.inline_span {
+  margin: 20px;
+  padding: 20px;
+  width: 80px;
+  height: 150px;
+  background-color: lightblue;
+  border: 2px solid blue;
+}
+```
+
+## Display: Inline-block
+
+`display: inline-block does a subset of the block things we already know:`
+
+- The width and height properties are respected.
+- Padding, Margin, and Border will cause other elements to be pushed away from the box.
+- Does not break into new line
+
+<p class="ib_p">
+  I am a paragraph and this is a <span class="ib_span">span</span> inside that paragraph. A span
+  is an inline element and so does not respect width and height but it will now since we are using inline-block
+</p>
+
+Css used:
+```css
+.ib_p {
+  border: 2px solid rebeccapurple;
+  width: 300px;
+}
+
+.ib_span {
+  margin: 20px;
+  padding: 20px;
+  width: 80px;
+  height: 50px;
+  background-color: lightblue;
+  border: 2px solid blue;
+  display: inline-block; /*This helps to respect width and height */
+}
+```
+
+### Exercise:
+
+Navbar has 'a' element inside a border but it overlaps fix it and also make sure padding is applied
+
+<nav>
+  <ul class="links-list">
+    <li><a href="">Link one</a></li>
+    <li><a href="">Link two</a></li>
+    <li><a href="">Link three</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,64 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="stacking context/stacking" />
+
+# Stacking context :
+
+For overlapping elements, z-index, managing visual layering of content stacking context is important that determines how elements
+are layered visually with higher stacking index appear infront of lower ones.
+
+### When Does a Stacking Context Get Created?
+- Root element
+- positioned elements(fixed, relative)
+- flex and grid items
+- opacity
+- transform
+- perspective
+- filter
+- clip-path
+- z-index
+
+Imagine a table where we keep blocks one over other as per the numbering and if a table has a tray and blocks kept in a tray are 
+separate from other blocks on table. Similarly every stacking context is independent and does not overlap with others
+
+Here,
+The table is the main stacking area.
+Each tray creates its own stacking area (like a mini world).
+Blocks in a tray can only stack within that tray, no matter how tall they are.
+
+<div class="parent">
+  <div class="child-a">Child A</div>
+  <div class="child-b">Child B</div>
+</div>
+
+CSS Used
+```css
+.parent {
+  position: relative;
+  z-index: 1;
+  background: lightblue;
+  width: 200px;
+  height: 200px;
+}
+
+.child-a {
+  position: relative;
+  z-index: 10;
+  background: orange;
+  width: 100px;
+  height: 100px;
+}
+
+.child-b {
+  position: relative;
+  z-index: 5;
+  background: green;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+}
+```
+
+So here parent establish a new stacking context due to position and z-index. 
+The child a and b are ordered by their z-index relative to each other within stacking context of parent.
+

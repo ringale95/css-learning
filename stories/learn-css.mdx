@@ -54,9 +54,21 @@ Inline styles > ID selectors > Class + Element selectors > Class selectors > Ele
 We can combine more than one specificty like class + element or class + id and so on. Calculate specificity based on the total of all!Refrain from using `style` tag.
 
 
+## How CSS works?
 
+- Browser loads HTML which is received from network converts HTML into DOM (DOM is document in computer's memory).
+- Browser fetches most resources that are linked to HTML document like video, images,CSS. 
+- Browser parses CSS and based on css rules it attaches the rules to node of DOM (`render tree`) and then visual display of page is shown (painting)
 
+```html
+.box {
+  width: 500px;
+  width: calc(100% - 50px);
+}
+```
 
+This makes sure old browser use 500px whereas new browser overrides with calc and understands calc. We do this so that
+old browser who dont understand calc can still work
 
 
 

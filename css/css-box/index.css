@@ -33,3 +33,91 @@
   font-size: 18px;
   text-align: center;
 }
+
+.pc_container {
+  border: 5px solid blue;
+  margin: 40px;
+}
+
+.pc_container p {
+  border: 5px solid rebeccapurple;
+  background-color: lightgray;
+  padding: 10px;
+}
+.pc_container .one_pc {
+  margin-bottom: 50px;
+}
+
+.pc_container .two_pc {
+  margin-top: 30px;
+}
+
+.bc_container {
+  margin: 40px;
+  padding: 20px;
+  border-top: 5px dotted green;
+  border-right: 1px solid black;
+  border-bottom: 20px double rgb(23 45 145);
+}
+
+.bc_container .bc_box {
+  padding: 20px;
+  background-color: lightgray;
+  border: 1px solid #333333;
+  border-top-style: dotted;
+  border-right-width: 20px;
+  border-bottom-color: hotpink;
+}
+
+.inline_p {
+  border: 2px solid rebeccapurple;
+  width: 200px;
+}
+.inline_span {
+  margin: 20px;
+  padding: 20px;
+  width: 80px;
+  height: 150px;
+  background-color: lightblue;
+  border: 2px solid blue;
+}
+
+.ib_p {
+  border: 2px solid rebeccapurple;
+  width: 300px;
+}
+
+.ib_span {
+  margin: 20px;
+  padding: 20px;
+  width: 80px;
+  height: 50px;
+  background-color: lightblue;
+  border: 2px solid blue;
+  display: inline-block; /*This helps to respect width and height */
+}
+
+.links-list {
+  font-family: sans-serif;
+  display: flex;
+  list-style: none !important;
+  border: 1px solid #000;
+}
+
+
+.links-list li {
+  margin: 5px;
+}
+
+.links-list a {
+  background-color: rgb(179 57 81);
+  color: #fff;
+  display:inline-block;
+  text-decoration: none;
+  padding: 1em 2em;
+}
+
+.links-list a:hover {
+  background-color: rgb(66 28 40);
+  color: #fff;
+}

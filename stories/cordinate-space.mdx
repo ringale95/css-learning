@@ -9,3 +9,20 @@ import { Meta } from "@storybook/blocks";
 1. CSS Box Model and Initial Coordinate Space:
 
 View [CSS Box Model](?path=/docs/box-model-css-box-model--docs)
+
+## Standard CSSOM Coordinate Systems
+1. Offset: 
+ - Origin: Top-left corner of the element where the event occurred.
+ - Example: MouseEvent.offsetX and MouseEvent.offsetY give the coordinates relative to the element receiving the event.
+
+2. Viewport (client):
+- Origin: Top-left corner of Viewport
+- Example: MouseEvent.clientX and MouseEvent.clientY give the mouse position relative to the viewport.
+
+3. page
+- Origin: Top-left corner of entire document
+- MouseEvent.pageX and MouseEvent.pageY remain constant for the same position in the document, even if scrolled.
+
+4. Screen:
+- Origin: Top-left corner of the user's screen.
+- Example: MouseEvent.screenX and MouseEvent.screenY provide coordinates relative to the screen.

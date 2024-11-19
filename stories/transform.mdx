@@ -27,3 +27,18 @@ transform: none | transform-functions;
   <div class="box_t translate">Translate</div>
   <div class="box_t skew">Skew</div>
   <div class="box_t combined">Combined</div>
+
+
+
+If the property value above is set to any other value apart from `none` then [stacking context](?path=/docs/stacking-context-stacking--docs).
+is created.
+
+
+`Scaling/zooming animations are problematic for accessibility, as they are a common trigger for certain types of migraine. If you need to include such animations on your website, you should provide a control to allow users to turn off animations, preferably site-wide.`
+
+```
+transform: translate(30px, 20px);
+```
+Translate moves element 30px to right along X-axis and 20px down(along Y-axis) from current position.
+
+The translate function does not affect the document flow, so it doesn’t push other elements around; it only visually moves the element.

@@ -1,0 +1,24 @@
+.parent {
+  position: relative;
+  z-index: 1;
+  background: lightblue;
+  width: 200px;
+  height: 200px;
+}
+
+.child-a {
+  position: relative;
+  z-index: 10;
+  background: orange;
+  width: 100px;
+  height: 100px;
+}
+
+.child-b {
+  position: relative;
+  z-index: 5;
+  background: green;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+}
